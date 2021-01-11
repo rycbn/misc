@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E141792725ACEC2D00AC2BED /* miscApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141792625ACEC2D00AC2BED /* miscApp.swift */; };
+		E141792725ACEC2D00AC2BED /* MiscApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141792625ACEC2D00AC2BED /* MiscApp.swift */; };
 		E141792925ACEC2D00AC2BED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E141792825ACEC2D00AC2BED /* ContentView.swift */; };
 		E141792B25ACEC2D00AC2BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E141792A25ACEC2D00AC2BED /* Assets.xcassets */; };
 		E141792E25ACEC2D00AC2BED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E141792D25ACEC2D00AC2BED /* Preview Assets.xcassets */; };
@@ -15,7 +15,7 @@
 
 /* Begin PBXFileReference section */
 		E141792325ACEC2D00AC2BED /* misc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = misc.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E141792625ACEC2D00AC2BED /* miscApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = miscApp.swift; sourceTree = "<group>"; };
+		E141792625ACEC2D00AC2BED /* MiscApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscApp.swift; sourceTree = "<group>"; };
 		E141792825ACEC2D00AC2BED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E141792A25ACEC2D00AC2BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E141792D25ACEC2D00AC2BED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -36,10 +36,14 @@
 		E141791A25ACEC2D00AC2BED = {
 			isa = PBXGroup;
 			children = (
+				E1CFEF7A25ACF4EF0083C0D8 /* Supporting Files */,
+				E1CFEF7925ACF4DD0083C0D8 /* Resources */,
 				E141792525ACEC2D00AC2BED /* Shared */,
 				E141792425ACEC2D00AC2BED /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		E141792425ACEC2D00AC2BED /* Products */ = {
 			isa = PBXGroup;
@@ -52,11 +56,8 @@
 		E141792525ACEC2D00AC2BED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E141792625ACEC2D00AC2BED /* miscApp.swift */,
+				E141792625ACEC2D00AC2BED /* MiscApp.swift */,
 				E141792825ACEC2D00AC2BED /* ContentView.swift */,
-				E141792A25ACEC2D00AC2BED /* Assets.xcassets */,
-				E141792F25ACEC2D00AC2BED /* Info.plist */,
-				E141792C25ACEC2D00AC2BED /* Preview Content */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -67,6 +68,23 @@
 				E141792D25ACEC2D00AC2BED /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E1CFEF7925ACF4DD0083C0D8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E141792A25ACEC2D00AC2BED /* Assets.xcassets */,
+				E141792C25ACEC2D00AC2BED /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E1CFEF7A25ACF4EF0083C0D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E141792F25ACEC2D00AC2BED /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E141792925ACEC2D00AC2BED /* ContentView.swift in Sources */,
-				E141792725ACEC2D00AC2BED /* miscApp.swift in Sources */,
+				E141792725ACEC2D00AC2BED /* MiscApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,10 +286,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"misc/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y9BC25E7GB;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = misc/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -290,10 +308,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"misc/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = Y9BC25E7GB;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = misc/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
