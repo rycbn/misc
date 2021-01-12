@@ -4,7 +4,7 @@ import SwiftUI
 struct MiscApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      RootView()
     }
   }
 }
