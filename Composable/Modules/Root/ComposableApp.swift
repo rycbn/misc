@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct MiscApp: App {
+struct ComposableApp: App {
   var body: some Scene {
     WindowGroup {
       RootView()
