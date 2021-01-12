@@ -18,9 +18,30 @@
 		E14CEF9525ADC7EA008E7771 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEF9425ADC7EA008E7771 /* ComposableArchitecture */; };
 		E14CEF9A25ADC8F0008E7771 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEF9925ADC8F0008E7771 /* Kingfisher */; };
 		E14CEF9F25ADCAB6008E7771 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEF9E25ADCAB6008E7771 /* Kingfisher */; };
+		E14CEFB425ADCC5C008E7771 /* VanillaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CEFB325ADCC5C008E7771 /* VanillaTests.swift */; };
+		E14CEFC825ADCC8D008E7771 /* ComposableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CEFC725ADCC8D008E7771 /* ComposableTests.swift */; };
+		E14CEFE425ADCD4B008E7771 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEFE325ADCD4B008E7771 /* SnapshotTesting */; };
+		E14CEFEA25ADCD61008E7771 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEFE925ADCD61008E7771 /* SnapshotTesting */; };
 		E1C3A5CA25AD0BE50044F471 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A5C925AD0BE50044F471 /* ShopView.swift */; };
 		E1C3A5CE25AD0D6F0044F471 /* TraktView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A5CD25AD0D6F0044F471 /* TraktView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E14CEFB625ADCC5C008E7771 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E141791B25ACEC2D00AC2BED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E141792225ACEC2D00AC2BED;
+			remoteInfo = vanilla;
+		};
+		E14CEFCA25ADCC8D008E7771 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E141791B25ACEC2D00AC2BED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E134538425ADC4A60098A2D2;
+			remoteInfo = composable;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E134538525ADC4A60098A2D2 /* composable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = composable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +56,12 @@
 		E141792F25ACEC2D00AC2BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E14CEF7025ADC531008E7771 /* VanillaApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VanillaApp.swift; sourceTree = "<group>"; };
 		E14CEF7125ADC531008E7771 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		E14CEFB125ADCC5C008E7771 /* vanillaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = vanillaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E14CEFB325ADCC5C008E7771 /* VanillaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VanillaTests.swift; sourceTree = "<group>"; };
+		E14CEFB525ADCC5C008E7771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E14CEFC525ADCC8D008E7771 /* composableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = composableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E14CEFC725ADCC8D008E7771 /* ComposableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableTests.swift; sourceTree = "<group>"; };
+		E14CEFC925ADCC8D008E7771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1C3A5C925AD0BE50044F471 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		E1C3A5CD25AD0D6F0044F471 /* TraktView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +81,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				E14CEF9F25ADCAB6008E7771 /* Kingfisher in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14CEFAE25ADCC5C008E7771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E14CEFEA25ADCD61008E7771 /* SnapshotTesting in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14CEFC225ADCC8D008E7771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E14CEFE425ADCD4B008E7771 /* SnapshotTesting in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +136,8 @@
 			children = (
 				E134539625ADC4D20098A2D2 /* Vanilla */,
 				E134538625ADC4A60098A2D2 /* Composable */,
+				E14CEFB225ADCC5C008E7771 /* VanillaTests */,
+				E14CEFC625ADCC8D008E7771 /* ComposableTests */,
 				E141792425ACEC2D00AC2BED /* Products */,
 				E14CEF9D25ADCAB6008E7771 /* Frameworks */,
 			);
@@ -105,6 +150,8 @@
 			children = (
 				E141792325ACEC2D00AC2BED /* vanilla.app */,
 				E134538525ADC4A60098A2D2 /* composable.app */,
+				E14CEFB125ADCC5C008E7771 /* vanillaTests.xctest */,
+				E14CEFC525ADCC8D008E7771 /* composableTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -165,6 +212,24 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E14CEFB225ADCC5C008E7771 /* VanillaTests */ = {
+			isa = PBXGroup;
+			children = (
+				E14CEFB325ADCC5C008E7771 /* VanillaTests.swift */,
+				E14CEFB525ADCC5C008E7771 /* Info.plist */,
+			);
+			path = VanillaTests;
+			sourceTree = "<group>";
+		};
+		E14CEFC625ADCC8D008E7771 /* ComposableTests */ = {
+			isa = PBXGroup;
+			children = (
+				E14CEFC725ADCC8D008E7771 /* ComposableTests.swift */,
+				E14CEFC925ADCC8D008E7771 /* Info.plist */,
+			);
+			path = ComposableTests;
 			sourceTree = "<group>";
 		};
 		E1723A2725AD055B00F20B04 /* Modules */ = {
@@ -254,6 +319,48 @@
 			productReference = E141792325ACEC2D00AC2BED /* vanilla.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E14CEFB025ADCC5C008E7771 /* vanillaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E14CEFB825ADCC5C008E7771 /* Build configuration list for PBXNativeTarget "vanillaTests" */;
+			buildPhases = (
+				E14CEFAD25ADCC5C008E7771 /* Sources */,
+				E14CEFAE25ADCC5C008E7771 /* Frameworks */,
+				E14CEFAF25ADCC5C008E7771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E14CEFB725ADCC5C008E7771 /* PBXTargetDependency */,
+			);
+			name = vanillaTests;
+			packageProductDependencies = (
+				E14CEFE925ADCD61008E7771 /* SnapshotTesting */,
+			);
+			productName = VanillaTests;
+			productReference = E14CEFB125ADCC5C008E7771 /* vanillaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E14CEFC425ADCC8D008E7771 /* composableTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E14CEFCC25ADCC8D008E7771 /* Build configuration list for PBXNativeTarget "composableTests" */;
+			buildPhases = (
+				E14CEFC125ADCC8D008E7771 /* Sources */,
+				E14CEFC225ADCC8D008E7771 /* Frameworks */,
+				E14CEFC325ADCC8D008E7771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E14CEFCB25ADCC8D008E7771 /* PBXTargetDependency */,
+			);
+			name = composableTests;
+			packageProductDependencies = (
+				E14CEFE325ADCD4B008E7771 /* SnapshotTesting */,
+			);
+			productName = ComposableTests;
+			productReference = E14CEFC525ADCC8D008E7771 /* composableTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -269,6 +376,14 @@
 					E141792225ACEC2D00AC2BED = {
 						CreatedOnToolsVersion = 12.3;
 					};
+					E14CEFB025ADCC5C008E7771 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = E141792225ACEC2D00AC2BED;
+					};
+					E14CEFC425ADCC8D008E7771 = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = E134538425ADC4A60098A2D2;
+					};
 				};
 			};
 			buildConfigurationList = E141791E25ACEC2D00AC2BED /* Build configuration list for PBXProject "misc" */;
@@ -283,6 +398,7 @@
 			packageReferences = (
 				E14CEF9325ADC7EA008E7771 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				E14CEF9825ADC8F0008E7771 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				E14CEFE225ADCD4B008E7771 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
 			);
 			productRefGroup = E141792425ACEC2D00AC2BED /* Products */;
 			projectDirPath = "";
@@ -290,6 +406,8 @@
 			targets = (
 				E141792225ACEC2D00AC2BED /* vanilla */,
 				E134538425ADC4A60098A2D2 /* composable */,
+				E14CEFB025ADCC5C008E7771 /* vanillaTests */,
+				E14CEFC425ADCC8D008E7771 /* composableTests */,
 			);
 		};
 /* End PBXProject section */
@@ -310,6 +428,20 @@
 			files = (
 				E141792E25ACEC2D00AC2BED /* Preview Assets.xcassets in Resources */,
 				E141792B25ACEC2D00AC2BED /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14CEFAF25ADCC5C008E7771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14CEFC325ADCC8D008E7771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +468,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E14CEFAD25ADCC5C008E7771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E14CEFB425ADCC5C008E7771 /* VanillaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E14CEFC125ADCC8D008E7771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E14CEFC825ADCC8D008E7771 /* ComposableTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E14CEFB725ADCC5C008E7771 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E141792225ACEC2D00AC2BED /* vanilla */;
+			targetProxy = E14CEFB625ADCC5C008E7771 /* PBXContainerItemProxy */;
+		};
+		E14CEFCB25ADCC8D008E7771 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E134538425ADC4A60098A2D2 /* composable */;
+			targetProxy = E14CEFCA25ADCC8D008E7771 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		E134539225ADC4A60098A2D2 /* Debug */ = {
@@ -543,6 +704,86 @@
 			};
 			name = Release;
 		};
+		E14CEFB925ADCC5C008E7771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9BC25E7GB;
+				INFOPLIST_FILE = VanillaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rycbn.VanillaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/vanilla.app/vanilla";
+			};
+			name = Debug;
+		};
+		E14CEFBA25ADCC5C008E7771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9BC25E7GB;
+				INFOPLIST_FILE = VanillaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rycbn.VanillaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/vanilla.app/vanilla";
+			};
+			name = Release;
+		};
+		E14CEFCD25ADCC8D008E7771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9BC25E7GB;
+				INFOPLIST_FILE = ComposableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rycbn.ComposableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/composable.app/composable";
+			};
+			name = Debug;
+		};
+		E14CEFCE25ADCC8D008E7771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y9BC25E7GB;
+				INFOPLIST_FILE = ComposableTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.rycbn.ComposableTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/composable.app/composable";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -573,6 +814,24 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		E14CEFB825ADCC5C008E7771 /* Build configuration list for PBXNativeTarget "vanillaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E14CEFB925ADCC5C008E7771 /* Debug */,
+				E14CEFBA25ADCC5C008E7771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E14CEFCC25ADCC8D008E7771 /* Build configuration list for PBXNativeTarget "composableTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E14CEFCD25ADCC8D008E7771 /* Debug */,
+				E14CEFCE25ADCC8D008E7771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -592,6 +851,14 @@
 				minimumVersion = 6.0.1;
 			};
 		};
+		E14CEFE225ADCD4B008E7771 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -609,6 +876,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E14CEF9825ADC8F0008E7771 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		E14CEFE325ADCD4B008E7771 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E14CEFE225ADCD4B008E7771 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
+		};
+		E14CEFE925ADCD61008E7771 /* SnapshotTesting */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E14CEFE225ADCD4B008E7771 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
+			productName = SnapshotTesting;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
