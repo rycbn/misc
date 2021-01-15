@@ -11,11 +11,12 @@ let package = Package(
             targets: ["SharedUI"]),
     ],
     dependencies: [
+        .package(url: "https://github.com/onevcat/Kingfisher", from: "6.0.1"),
     ],
     targets: [
         .target(
             name: "SharedUI",
-            dependencies: []),
+            dependencies: ["Kingfisher"]),
         .testTarget(
             name: "SharedUITests",
             dependencies: ["SharedUI"]),

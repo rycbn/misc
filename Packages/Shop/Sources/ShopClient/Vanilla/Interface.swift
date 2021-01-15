@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-public struct ShopClient {
+public struct ShopVanillaClient {
     public let summary: (URL) -> AnyPublisher<SummaryResponse, Error>
     
     public init(summary: @escaping (URL) -> AnyPublisher<SummaryResponse, Error>) {

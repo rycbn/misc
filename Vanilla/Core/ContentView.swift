@@ -9,6 +9,7 @@ struct ContentView: View {
       NavigationView {
         ShopView(viewModel: ShopViewModel(client: .live))
           .navigationTitle(Text("Shop"))
+          .navigationBarTitleDisplayMode(.inline)
       }
       .tabItem {
         Label("Shop", systemImage: "list.bullet.below.rectangle")

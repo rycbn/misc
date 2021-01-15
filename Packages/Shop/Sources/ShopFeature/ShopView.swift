@@ -1,5 +1,6 @@
 import SwiftUI
 import SharedUI
+import ProductList
 
 public struct ShopView: View {
     @ObservedObject var viewModel: ShopViewModel
@@ -13,8 +14,7 @@ public struct ShopView: View {
             ActivityIndicator()
                 .onAppear(perform: fetch)
         } else {
-            ProductListView(products: viewModel.products)
-            .onAppear(perform: fetch)
+            ProductListView(viewModel.products)
         }
     }
     

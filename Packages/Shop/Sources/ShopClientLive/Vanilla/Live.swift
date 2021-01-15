@@ -1,7 +1,7 @@
 import Foundation
 import ShopClient
 
-extension ShopClient {
+extension ShopVanillaClient {
     public static let live = Self { url in
         URLSession
             .shared

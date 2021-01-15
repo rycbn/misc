@@ -18,11 +18,22 @@ let package = Package(
             name: "ShopFeature",
             targets: ["ShopFeature"]
         ),
+        .library(
+            name: "ProductList",
+            targets: ["ProductList"]
+        ),
+        .library(
+            name: "ProductDetail",
+            targets: ["ProductDetail"]
+        ),
+        .library(
+            name: "Product",
+            targets: ["Product"]
+        ),
     ],
     dependencies: [
         .package(path: "Shared"),
         .package(path: "SharedUI"),
-        .package(url: "https://github.com/onevcat/Kingfisher", from: "6.0.1"),
     ],
     targets: [
         .target(
@@ -37,9 +48,30 @@ let package = Package(
             name: "ShopFeature",
             dependencies: [
                 "Shared",
-                "SharedUI",
-                "Kingfisher",
-                "ShopClientLive"
+                "ShopClientLive",
+                "ProductList"
+            ]
+        ),
+        .target(
+            name: "ProductList",
+            dependencies: [
+                "ShopClient",
+                "ProductDetail",
+                "Product"
+            ]
+        ),
+        .target(
+            name: "ProductDetail",
+            dependencies: [
+                "ShopClient",
+                "SharedUI"
+            ]
+        ),
+        .target(
+            name: "Product",
+            dependencies: [
+                "ShopClient",
+                "SharedUI"
             ]
         ),
         .testTarget(

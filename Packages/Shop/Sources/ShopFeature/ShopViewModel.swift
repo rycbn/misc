@@ -6,10 +6,10 @@ public final class ShopViewModel: ObservableObject {
     @Published private(set) var products: [Product] = []
     @Published private(set) var isLoading: Bool = true
     
-    let client: ShopClient
+    let client: ShopVanillaClient
     private var cancellable: AnyCancellable?
     
-    public init(client: ShopClient) {
+    public init(client: ShopVanillaClient) {
         self.client = client
     }
     
