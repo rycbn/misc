@@ -1,12 +1,14 @@
 import SwiftUI
+import ShopClientLive
+import ShopFeature
 
-struct RootView: View {
-  
+struct ContentView: View {
+
   var body: some View {
     TabView {
       NavigationView {
-        ShopView()
-          .navigationTitle("Shop")
+        ShopView(viewModel: ShopViewModel(client: .live))
+          .navigationTitle(Text("Shop"))
       }
       .tabItem {
         Label("Shop", systemImage: "list.bullet.below.rectangle")
@@ -15,7 +17,7 @@ struct RootView: View {
       
       NavigationView {
         TraktView()
-          .navigationTitle("Trakt")
+          .navigationTitle(Text("Trakt"))
       }
       .tabItem {
         Label("Trakt", systemImage: "tv")
@@ -25,8 +27,8 @@ struct RootView: View {
   }
 }
 
-struct RootView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    RootView()
+    ContentView()
   }
 }

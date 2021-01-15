@@ -1,0 +1,67 @@
+{
+  "summaries": [
+    {
+      "name": "Mini dress",
+      "visible": true,
+      "saleableStandardSizeIds": [
+        "00002_XXS_Clothing",
+        "00003_XS_Clothing",
+        "00004_S_Clothing",
+        "00005_M_Clothing",
+        "00006_L_Clothing"
+      ],
+      "price": {
+        "currency": "GBP",
+        "divisor": 100,
+        "amount": 59500
+      },
+      "leafCategoryIds": [
+        6028,
+        2856,
+        12900,
+        41680,
+        6168
+      ],
+      "onSale": false,
+      "analyticsKey": "Lulu belted ruffled printed cotton mini dress",
+      "id": 1317866,
+      "brandId": 387,
+      "colourIds": [
+        44
+      ],
+      "images": {
+        "shots": [
+          "in",
+          "ou",
+          "bk",
+          "cu",
+          "e1"
+        ],
+        "sizes": [
+          "dl",
+          "l",
+          "m",
+          "m2",
+          "mt",
+          "mt2",
+          "pp",
+          "s",
+          "sl",
+          "xl",
+          "xs",
+          "xxl"
+        ],
+        "mediaType": "image/jpeg",
+        "urlTemplate": "{{scheme}}//cache.net-a-porter.com/images/products/1317866/1317866_{{shot}}_{{size}}.jpg"
+      },
+      "badges": [
+        "In_Stock"
+      ]
+    }
+  ],
+  "listInfo": {
+    "limit": 1,
+    "offset": 0,
+    "total": 33541
+  }
+}
