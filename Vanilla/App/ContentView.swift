@@ -7,7 +7,7 @@ struct ContentView: View {
   var body: some View {
     TabView {
       NavigationView {
-        ShopView(viewModel: ShopViewModel(client: .live))
+        VanillaShopView(viewModel: ShopViewModel(client: .live))
           .navigationTitle(Text("Shop"))
           .navigationBarTitleDisplayMode(.inline)
       }

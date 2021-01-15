@@ -2,7 +2,7 @@ import SwiftUI
 import SharedUI
 import ProductList
 
-public struct ShopView: View {
+public struct VanillaShopView: View {
     @ObservedObject var viewModel: ShopViewModel
     
     public init(viewModel: ShopViewModel) {
@@ -14,7 +14,7 @@ public struct ShopView: View {
             ActivityIndicator()
                 .onAppear(perform: fetch)
         } else {
-            ProductListView(viewModel.products)
+            VanillaProductListView(viewModel.products)
         }
     }
     
@@ -23,9 +23,9 @@ public struct ShopView: View {
     }
 }
 
-struct ShopView_Previews: PreviewProvider {
+struct VanillaShopView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopView(
+        VanillaShopView(
             viewModel: ShopViewModel(client: .mock)
         )
     }

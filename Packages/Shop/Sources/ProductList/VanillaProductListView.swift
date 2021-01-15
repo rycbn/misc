@@ -3,7 +3,7 @@ import ShopClient
 import ProductDetail
 import Product
 
-public struct ProductListView: View {
+public struct VanillaProductListView: View {
     public let products: [Product]
     
     private let columns = [
@@ -19,8 +19,9 @@ public struct ProductListView: View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(products) { product in
-                    NavigationLink(destination: ProductDetailView(product)) {
-                        ProductView(product)
+                    NavigationLink(destination: VanillaProductDetailView(product)) {
+                        VanillaProductView(product)
+                            .accessibility(label: Text(product.name))
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
@@ -31,8 +32,8 @@ public struct ProductListView: View {
     }
 }
 
-struct ProductistView_Previews: PreviewProvider {
+struct VanillaProductistView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListView([.miniDress, .cashmereCardigan])
+        VanillaProductListView([.miniDress, .cashmereCardigan])
     }
 }

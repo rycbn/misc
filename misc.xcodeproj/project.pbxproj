@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E134538825ADC4A60098A2D2 /* ComposableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134538725ADC4A60098A2D2 /* ComposableApp.swift */; };
-		E134538A25ADC4A60098A2D2 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134538925ADC4A60098A2D2 /* RootView.swift */; };
+		E134538A25ADC4A60098A2D2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134538925ADC4A60098A2D2 /* ContentView.swift */; };
 		E134538C25ADC4A60098A2D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E134538B25ADC4A60098A2D2 /* Assets.xcassets */; };
 		E134538F25ADC4A60098A2D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E134538E25ADC4A60098A2D2 /* Preview Assets.xcassets */; };
 		E141792B25ACEC2D00AC2BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E141792A25ACEC2D00AC2BED /* Assets.xcassets */; };
@@ -44,7 +44,7 @@
 /* Begin PBXFileReference section */
 		E134538525ADC4A60098A2D2 /* composable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = composable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E134538725ADC4A60098A2D2 /* ComposableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposableApp.swift; sourceTree = "<group>"; };
-		E134538925ADC4A60098A2D2 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		E134538925ADC4A60098A2D2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E134538B25ADC4A60098A2D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E134538E25ADC4A60098A2D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E134539025ADC4A60098A2D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			children = (
 				E1CFEF7A25ACF4EF0083C0D8 /* Supporting Files */,
 				E1CFEF7925ACF4DD0083C0D8 /* Resources */,
-				E1723A2725AD055B00F20B04 /* Core */,
+				E1723A2725AD055B00F20B04 /* App */,
 			);
 			path = Vanilla;
 			sourceTree = "<group>";
@@ -191,18 +191,18 @@
 		E14CEF8725ADC62A008E7771 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E14CEF8825ADC64E008E7771 /* Root */,
+				E14CEF8825ADC64E008E7771 /* App */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
 		};
-		E14CEF8825ADC64E008E7771 /* Root */ = {
+		E14CEF8825ADC64E008E7771 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				E134538725ADC4A60098A2D2 /* ComposableApp.swift */,
-				E134538925ADC4A60098A2D2 /* RootView.swift */,
+				E134538925ADC4A60098A2D2 /* ContentView.swift */,
 			);
-			path = Root;
+			path = App;
 			sourceTree = "<group>";
 		};
 		E14CEFB225ADCC5C008E7771 /* VanillaTests */ = {
@@ -232,14 +232,14 @@
 			path = Packages;
 			sourceTree = "<group>";
 		};
-		E1723A2725AD055B00F20B04 /* Core */ = {
+		E1723A2725AD055B00F20B04 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				E14CEF7025ADC531008E7771 /* VanillaApp.swift */,
 				E14CEF7125ADC531008E7771 /* ContentView.swift */,
 				E1C3A5D025AD0D870044F471 /* Trakt */,
 			);
-			path = Core;
+			path = App;
 			sourceTree = "<group>";
 		};
 		E1C3A5D025AD0D870044F471 /* Trakt */ = {
@@ -443,7 +443,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E134538A25ADC4A60098A2D2 /* RootView.swift in Sources */,
+				E134538A25ADC4A60098A2D2 /* ContentView.swift in Sources */,
 				E134538825ADC4A60098A2D2 /* ComposableApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

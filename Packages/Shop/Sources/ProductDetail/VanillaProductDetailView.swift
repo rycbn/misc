@@ -2,7 +2,7 @@ import SwiftUI
 import ShopClient
 import SharedUI
 
-public struct ProductDetailView: View {
+public struct VanillaProductDetailView: View {
     public let product: Product
     
     public init(_ product: Product) {
@@ -16,6 +16,7 @@ public struct ProductDetailView: View {
                     ForEach(product.images.urls, id: \.self) { url in
                         ProductImage(url)
                             .frame(width: 350)
+                            .accessibility(label: Text(product.name + "image"))
                     }
                 }
                 .padding(.leading, 8)
@@ -25,12 +26,17 @@ public struct ProductDetailView: View {
             
             Group {
                 Text(product.name)
+                    .accessibility(label: Text(product.name))
                     .padding(.bottom, 2)
+                
                 Text(product.price.totalAmount)
                     .fontWeight(.bold)
+                    .accessibility(label: Text(product.name + "total amount \(product.price.totalAmount)"))
+                
                 if !product.badge.isEmpty {
                     Text(product.badge)
                         .foregroundColor(.secondary)
+                        .accessibility(label: Text(product.name + product.badge))
                 }
             }
             .padding(.leading, 16)
@@ -40,8 +46,8 @@ public struct ProductDetailView: View {
     }
 }
 
-struct ProductDetailView_Previews: PreviewProvider {
+struct VanillaProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailView(.miniDress)
+        VanillaProductDetailView(.miniDress)
     }
 }
