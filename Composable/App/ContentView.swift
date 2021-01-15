@@ -1,6 +1,6 @@
 import SwiftUI
-import ShopClientLive
 import ShopFeature
+import ShopClientLive
 
 enum Tab {
   case shop
@@ -8,13 +8,12 @@ enum Tab {
 }
 
 struct ContentView: View {
-  
   @State private var selectedTab: Tab = .shop
-
+  
   var body: some View {
     TabView(selection: $selectedTab) {
       NavigationView {
-        VanillaShopView(viewModel: ShopViewModel(client: .live))
+        ComposableShopView()
           .navigationTitle(Text("Shop"))
           .navigationBarTitleDisplayMode(.inline)
       }
@@ -25,7 +24,8 @@ struct ContentView: View {
       .tag(Tab.shop)
       
       NavigationView {
-        TraktView()
+        //TraktView()
+        Text("Trakt")
           .navigationTitle(Text("Trakt"))
       }
       .tabItem {

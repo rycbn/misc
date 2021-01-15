@@ -15,13 +15,15 @@
 		E141792E25ACEC2D00AC2BED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E141792D25ACEC2D00AC2BED /* Preview Assets.xcassets */; };
 		E14CEF7225ADC531008E7771 /* VanillaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CEF7025ADC531008E7771 /* VanillaApp.swift */; };
 		E14CEF7325ADC531008E7771 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CEF7125ADC531008E7771 /* ContentView.swift */; };
-		E14CEF9525ADC7EA008E7771 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEF9425ADC7EA008E7771 /* ComposableArchitecture */; };
 		E14CEFC825ADCC8D008E7771 /* ComposableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CEFC725ADCC8D008E7771 /* ComposableTests.swift */; };
 		E14CEFE425ADCD4B008E7771 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEFE325ADCD4B008E7771 /* SnapshotTesting */; };
 		E14CEFEA25ADCD61008E7771 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEFE925ADCD61008E7771 /* SnapshotTesting */; };
 		E1C04F2325B109C500599E14 /* ShopClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = E1C04F2225B109C500599E14 /* ShopClientLive */; };
 		E1C04F2525B109C500599E14 /* ShopFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E1C04F2425B109C500599E14 /* ShopFeature */; };
 		E1C3A5CE25AD0D6F0044F471 /* TraktView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A5CD25AD0D6F0044F471 /* TraktView.swift */; };
+		E1CAC6B525B1FF8D004B3FCE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC6B425B1FF8D004B3FCE /* ComposableArchitecture */; };
+		E1CAC6C025B2093A004B3FCE /* ShopClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC6BF25B2093A004B3FCE /* ShopClientLive */; };
+		E1CAC6C225B2093E004B3FCE /* ShopFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC6C125B2093E004B3FCE /* ShopFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E14CEF9525ADC7EA008E7771 /* ComposableArchitecture in Frameworks */,
+				E1CAC6C225B2093E004B3FCE /* ShopFeature in Frameworks */,
+				E1CAC6B525B1FF8D004B3FCE /* ComposableArchitecture in Frameworks */,
+				E1CAC6C025B2093A004B3FCE /* ShopClientLive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,7 +117,7 @@
 		E134538625ADC4A60098A2D2 /* Composable */ = {
 			isa = PBXGroup;
 			children = (
-				E14CEF8725ADC62A008E7771 /* Modules */,
+				E14CEF8825ADC64E008E7771 /* App */,
 				E14CEF8625ADC61A008E7771 /* Supporting Files */,
 				E14CEF8525ADC600008E7771 /* Resources */,
 			);
@@ -147,6 +151,7 @@
 				E14CEFB225ADCC5C008E7771 /* VanillaTests */,
 				E14CEFC625ADCC8D008E7771 /* ComposableTests */,
 				E141792425ACEC2D00AC2BED /* Products */,
+				E1CAC6BE25B2093A004B3FCE /* Frameworks */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -186,14 +191,6 @@
 				E134539025ADC4A60098A2D2 /* Info.plist */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E14CEF8725ADC62A008E7771 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				E14CEF8825ADC64E008E7771 /* App */,
-			);
-			path = Modules;
 			sourceTree = "<group>";
 		};
 		E14CEF8825ADC64E008E7771 /* App */ = {
@@ -250,6 +247,13 @@
 			path = Trakt;
 			sourceTree = "<group>";
 		};
+		E1CAC6BE25B2093A004B3FCE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E1CFEF7925ACF4DD0083C0D8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,7 +288,9 @@
 			);
 			name = composable;
 			packageProductDependencies = (
-				E14CEF9425ADC7EA008E7771 /* ComposableArchitecture */,
+				E1CAC6B425B1FF8D004B3FCE /* ComposableArchitecture */,
+				E1CAC6BF25B2093A004B3FCE /* ShopClientLive */,
+				E1CAC6C125B2093E004B3FCE /* ShopFeature */,
 			);
 			productName = composable;
 			productReference = E134538525ADC4A60098A2D2 /* composable.app */;
@@ -388,8 +394,8 @@
 			);
 			mainGroup = E141791A25ACEC2D00AC2BED;
 			packageReferences = (
-				E14CEF9325ADC7EA008E7771 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				E14CEFE225ADCD4B008E7771 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
+				E1CAC6B325B1FF8D004B3FCE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = E141792425ACEC2D00AC2BED /* Products */;
 			projectDirPath = "";
@@ -824,14 +830,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E14CEF9325ADC7EA008E7771 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.0;
-			};
-		};
 		E14CEFE225ADCD4B008E7771 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-snapshot-testing";
@@ -840,14 +838,17 @@
 				minimumVersion = 1.8.2;
 			};
 		};
+		E1CAC6B325B1FF8D004B3FCE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E14CEF9425ADC7EA008E7771 /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E14CEF9325ADC7EA008E7771 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
-		};
 		E14CEFE325ADCD4B008E7771 /* SnapshotTesting */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E14CEFE225ADCD4B008E7771 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
@@ -863,6 +864,19 @@
 			productName = ShopClientLive;
 		};
 		E1C04F2425B109C500599E14 /* ShopFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ShopFeature;
+		};
+		E1CAC6B425B1FF8D004B3FCE /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1CAC6B325B1FF8D004B3FCE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		E1CAC6BF25B2093A004B3FCE /* ShopClientLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ShopClientLive;
+		};
+		E1CAC6C125B2093E004B3FCE /* ShopFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ShopFeature;
 		};

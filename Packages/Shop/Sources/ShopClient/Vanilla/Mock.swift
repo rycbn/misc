@@ -1,7 +1,7 @@
 import Combine
 
-extension ShopVanillaClient {
-    public static let mock = ShopVanillaClient { _ in
+extension VanillaShopClient {
+    public static let mock = Self { _ in
         Just(
             SummaryResponse(
                 summaries: [.miniDress, .cashmereCardigan]
