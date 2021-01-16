@@ -1,5 +1,5 @@
 import SwiftUI
-import ShopClient
+import VanillaShopClient
 import ProductDetail
 import Product
 

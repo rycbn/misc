@@ -1,7 +1,6 @@
 import SwiftUI
 
 public struct PlaceholderImage: View {
-    
     public init() {}
     
     public var body: some View {

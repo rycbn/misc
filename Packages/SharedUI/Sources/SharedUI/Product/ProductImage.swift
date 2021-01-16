@@ -2,7 +2,6 @@ import SwiftUI
 import Kingfisher
 
 public struct ProductImage: View {
-    
     private let url: URL?
     
     public init(_ url: URL?) {

@@ -1,6 +1,7 @@
 import Foundation
 import Combine
-import ShopClient
+import VanillaShopClient
+import Product
 
 public final class ShopViewModel: ObservableObject {
     @Published private(set) var products: [Product] = []

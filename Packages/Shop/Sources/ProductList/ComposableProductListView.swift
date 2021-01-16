@@ -1,5 +1,5 @@
 import SwiftUI
-import ComposableArchitecture
+//import ComposableArchitecture
 
 public struct ComposableProductListView: View {
     

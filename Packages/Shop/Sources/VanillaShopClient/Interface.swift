@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import Product
 
 public struct VanillaShopClient {
     public let summary: (URL) -> AnyPublisher<SummaryResponse, Error>

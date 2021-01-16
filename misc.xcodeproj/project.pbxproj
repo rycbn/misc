@@ -18,12 +18,11 @@
 		E14CEFC825ADCC8D008E7771 /* ComposableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CEFC725ADCC8D008E7771 /* ComposableTests.swift */; };
 		E14CEFE425ADCD4B008E7771 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEFE325ADCD4B008E7771 /* SnapshotTesting */; };
 		E14CEFEA25ADCD61008E7771 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEFE925ADCD61008E7771 /* SnapshotTesting */; };
-		E1C04F2325B109C500599E14 /* ShopClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = E1C04F2225B109C500599E14 /* ShopClientLive */; };
-		E1C04F2525B109C500599E14 /* ShopFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E1C04F2425B109C500599E14 /* ShopFeature */; };
 		E1C3A5CE25AD0D6F0044F471 /* TraktView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A5CD25AD0D6F0044F471 /* TraktView.swift */; };
-		E1CAC6B525B1FF8D004B3FCE /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC6B425B1FF8D004B3FCE /* ComposableArchitecture */; };
-		E1CAC6C025B2093A004B3FCE /* ShopClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC6BF25B2093A004B3FCE /* ShopClientLive */; };
-		E1CAC6C225B2093E004B3FCE /* ShopFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC6C125B2093E004B3FCE /* ShopFeature */; };
+		E1CAC6EC25B342DD004B3FCE /* VanillaShopClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC6EB25B342DD004B3FCE /* VanillaShopClientLive */; };
+		E1CAC70A25B3497D004B3FCE /* VanillaShopFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC70925B3497D004B3FCE /* VanillaShopFeature */; };
+		E1CAC71025B34E95004B3FCE /* ComposableShopClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC70F25B34E95004B3FCE /* ComposableShopClientLive */; };
+		E1CAC71225B34E95004B3FCE /* ComposableShopFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC71125B34E95004B3FCE /* ComposableShopFeature */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,9 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1CAC6C225B2093E004B3FCE /* ShopFeature in Frameworks */,
-				E1CAC6B525B1FF8D004B3FCE /* ComposableArchitecture in Frameworks */,
-				E1CAC6C025B2093A004B3FCE /* ShopClientLive in Frameworks */,
+				E1CAC71225B34E95004B3FCE /* ComposableShopFeature in Frameworks */,
+				E1CAC71025B34E95004B3FCE /* ComposableShopClientLive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,8 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1C04F2325B109C500599E14 /* ShopClientLive in Frameworks */,
-				E1C04F2525B109C500599E14 /* ShopFeature in Frameworks */,
+				E1CAC6EC25B342DD004B3FCE /* VanillaShopClientLive in Frameworks */,
+				E1CAC70A25B3497D004B3FCE /* VanillaShopFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,9 +286,8 @@
 			);
 			name = composable;
 			packageProductDependencies = (
-				E1CAC6B425B1FF8D004B3FCE /* ComposableArchitecture */,
-				E1CAC6BF25B2093A004B3FCE /* ShopClientLive */,
-				E1CAC6C125B2093E004B3FCE /* ShopFeature */,
+				E1CAC70F25B34E95004B3FCE /* ComposableShopClientLive */,
+				E1CAC71125B34E95004B3FCE /* ComposableShopFeature */,
 			);
 			productName = composable;
 			productReference = E134538525ADC4A60098A2D2 /* composable.app */;
@@ -310,8 +307,8 @@
 			);
 			name = vanilla;
 			packageProductDependencies = (
-				E1C04F2225B109C500599E14 /* ShopClientLive */,
-				E1C04F2425B109C500599E14 /* ShopFeature */,
+				E1CAC6EB25B342DD004B3FCE /* VanillaShopClientLive */,
+				E1CAC70925B3497D004B3FCE /* VanillaShopFeature */,
 			);
 			productName = misc;
 			productReference = E141792325ACEC2D00AC2BED /* vanilla.app */;
@@ -395,7 +392,6 @@
 			mainGroup = E141791A25ACEC2D00AC2BED;
 			packageReferences = (
 				E14CEFE225ADCD4B008E7771 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */,
-				E1CAC6B325B1FF8D004B3FCE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = E141792425ACEC2D00AC2BED /* Products */;
 			projectDirPath = "";
@@ -838,14 +834,6 @@
 				minimumVersion = 1.8.2;
 			};
 		};
-		E1CAC6B325B1FF8D004B3FCE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.10.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -859,26 +847,21 @@
 			package = E14CEFE225ADCD4B008E7771 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
 		};
-		E1C04F2225B109C500599E14 /* ShopClientLive */ = {
+		E1CAC6EB25B342DD004B3FCE /* VanillaShopClientLive */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = ShopClientLive;
+			productName = VanillaShopClientLive;
 		};
-		E1C04F2425B109C500599E14 /* ShopFeature */ = {
+		E1CAC70925B3497D004B3FCE /* VanillaShopFeature */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = ShopFeature;
+			productName = VanillaShopFeature;
 		};
-		E1CAC6B425B1FF8D004B3FCE /* ComposableArchitecture */ = {
+		E1CAC70F25B34E95004B3FCE /* ComposableShopClientLive */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E1CAC6B325B1FF8D004B3FCE /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
+			productName = ComposableShopClientLive;
 		};
-		E1CAC6BF25B2093A004B3FCE /* ShopClientLive */ = {
+		E1CAC71125B34E95004B3FCE /* ComposableShopFeature */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = ShopClientLive;
-		};
-		E1CAC6C125B2093E004B3FCE /* ShopFeature */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ShopFeature;
+			productName = ComposableShopFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

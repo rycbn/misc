@@ -1,5 +1,6 @@
 import Foundation
-import ShopClient
+import VanillaShopClient
+import Product
 
 extension VanillaShopClient {
     public static let live = Self { url in

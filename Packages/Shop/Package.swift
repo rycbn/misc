@@ -7,16 +7,28 @@ let package = Package(
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "ShopClient",
-            targets: ["ShopClient"]
+            name: "VanillaShopClient",
+            targets: ["VanillaShopClient"]
         ),
         .library(
-            name: "ShopClientLive",
-            targets: ["ShopClientLive"]
+            name: "VanillaShopClientLive",
+            targets: ["VanillaShopClientLive"]
         ),
         .library(
-            name: "ShopFeature",
-            targets: ["ShopFeature"]
+            name: "VanillaShopFeature",
+            targets: ["VanillaShopFeature"]
+        ),
+        .library(
+            name: "ComposableShopClient",
+            targets: ["ComposableShopClient"]
+        ),
+        .library(
+            name: "ComposableShopClientLive",
+            targets: ["ComposableShopClientLive"]
+        ),
+        .library(
+            name: "ComposableShopFeature",
+            targets: ["ComposableShopFeature"]
         ),
         .library(
             name: "ProductList",
@@ -34,28 +46,59 @@ let package = Package(
     dependencies: [
         .package(path: "Shared"),
         .package(path: "SharedUI"),
+        .package(url: "https://github.com/pointfreeco/swift-composable-architecture", from: "0.10.0")
     ],
     targets: [
         .target(
-            name: "ShopClient",
-            dependencies: []
+            name: "VanillaShopClient",
+            dependencies: ["Product"]
         ),
         .target(
-            name: "ShopClientLive",
-            dependencies: ["ShopClient"]
+            name: "VanillaShopClientLive",
+            dependencies: [
+                "VanillaShopClient",
+                "Product"
+            ]
         ),
         .target(
-            name: "ShopFeature",
+            name: "VanillaShopFeature",
             dependencies: [
                 "Shared",
-                "ShopClientLive",
+                "VanillaShopClientLive",
+                "Product",
+                "ProductList"
+            ]
+        ),
+        .target(
+            name: "ComposableShopClient",
+            dependencies: [
+                "Product",
+                .product(
+                    name: "ComposableArchitecture",
+                    package: "swift-composable-architecture"
+                )
+            ]
+        ),
+        .target(
+            name: "ComposableShopClientLive",
+            dependencies: [
+                "ComposableShopClient",
+                "Product"
+            ]
+        ),
+        .target(
+            name: "ComposableShopFeature",
+            dependencies: [
+                "Shared",
+                "ComposableShopClientLive",
+                "Product",
                 "ProductList"
             ]
         ),
         .target(
             name: "ProductList",
             dependencies: [
-                "ShopClient",
+                "VanillaShopClient",
                 "ProductDetail",
                 "Product"
             ]
@@ -63,14 +106,13 @@ let package = Package(
         .target(
             name: "ProductDetail",
             dependencies: [
-                "ShopClient",
+                "VanillaShopClient",
                 "SharedUI"
             ]
         ),
         .target(
             name: "Product",
             dependencies: [
-                "ShopClient",
                 "SharedUI"
             ]
         ),
@@ -78,8 +120,8 @@ let package = Package(
             name: "ShopTests",
             dependencies: [
                 "Shared",
-                "ShopClient",
-                "ShopFeature"
+                "VanillaShopClient",
+                "VanillaShopFeature"
             ],
             resources: [
                 .copy("Resources")

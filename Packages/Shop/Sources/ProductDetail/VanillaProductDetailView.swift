@@ -1,5 +1,6 @@
 import SwiftUI
-import ShopClient
+import VanillaShopClient
+import Product
 import SharedUI
 
 public struct VanillaProductDetailView: View {
@@ -25,18 +26,13 @@ public struct VanillaProductDetailView: View {
             .padding(.bottom, 16)
             
             Group {
-                Text(product.name)
-                    .accessibility(label: Text(product.name))
+                ProductName(product.name)
                     .padding(.bottom, 2)
                 
-                Text(product.price.totalAmount)
-                    .fontWeight(.bold)
-                    .accessibility(label: Text(product.name + "total amount \(product.price.totalAmount)"))
+                ProductPrice(product.price.totalAmount)
                 
                 if !product.badge.isEmpty {
-                    Text(product.badge)
-                        .foregroundColor(.secondary)
-                        .accessibility(label: Text(product.name + product.badge))
+                    ProductBadge(product.badge)
                 }
             }
             .padding(.leading, 16)

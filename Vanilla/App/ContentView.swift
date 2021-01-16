@@ -1,6 +1,6 @@
 import SwiftUI
-import ShopClientLive
-import ShopFeature
+import VanillaShopClientLive
+import VanillaShopFeature
 
 enum Tab {
   case shop
