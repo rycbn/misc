@@ -1,7 +1,8 @@
 import SwiftUI
 import SharedUI
+import Product
 
-public struct VanillaProductView: View {
+public struct ProductView: View {
     public let product: Product
     
     public init(_ product: Product) {
@@ -31,8 +32,8 @@ public struct VanillaProductView: View {
     }
 }
 
-struct VanillaProductView_Previews: PreviewProvider {
+struct ProductView_Previews: PreviewProvider {
     static var previews: some View {
-        VanillaProductView(.miniDress)
+        ProductView(.miniDress)
     }
 }

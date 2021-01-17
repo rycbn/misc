@@ -16,7 +16,11 @@ let package = Package(
     targets: [
         .target(
             name: "SharedUI",
-            dependencies: ["Kingfisher"]),
+            dependencies: ["Kingfisher"],
+            resources: [
+                .process("Resources")
+            ]
+        ),
         .testTarget(
             name: "SharedUITests",
             dependencies: ["SharedUI"]),

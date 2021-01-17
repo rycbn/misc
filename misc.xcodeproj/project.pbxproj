@@ -19,9 +19,7 @@
 		E14CEFE425ADCD4B008E7771 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEFE325ADCD4B008E7771 /* SnapshotTesting */; };
 		E14CEFEA25ADCD61008E7771 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEFE925ADCD61008E7771 /* SnapshotTesting */; };
 		E1C3A5CE25AD0D6F0044F471 /* TraktView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A5CD25AD0D6F0044F471 /* TraktView.swift */; };
-		E1CAC6EC25B342DD004B3FCE /* VanillaShopClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC6EB25B342DD004B3FCE /* VanillaShopClientLive */; };
 		E1CAC70A25B3497D004B3FCE /* VanillaShopFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC70925B3497D004B3FCE /* VanillaShopFeature */; };
-		E1CAC71025B34E95004B3FCE /* ComposableShopClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC70F25B34E95004B3FCE /* ComposableShopClientLive */; };
 		E1CAC71225B34E95004B3FCE /* ComposableShopFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC71125B34E95004B3FCE /* ComposableShopFeature */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +70,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1CAC71225B34E95004B3FCE /* ComposableShopFeature in Frameworks */,
-				E1CAC71025B34E95004B3FCE /* ComposableShopClientLive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1CAC6EC25B342DD004B3FCE /* VanillaShopClientLive in Frameworks */,
 				E1CAC70A25B3497D004B3FCE /* VanillaShopFeature in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +282,6 @@
 			);
 			name = composable;
 			packageProductDependencies = (
-				E1CAC70F25B34E95004B3FCE /* ComposableShopClientLive */,
 				E1CAC71125B34E95004B3FCE /* ComposableShopFeature */,
 			);
 			productName = composable;
@@ -307,7 +302,6 @@
 			);
 			name = vanilla;
 			packageProductDependencies = (
-				E1CAC6EB25B342DD004B3FCE /* VanillaShopClientLive */,
 				E1CAC70925B3497D004B3FCE /* VanillaShopFeature */,
 			);
 			productName = misc;
@@ -847,17 +841,9 @@
 			package = E14CEFE225ADCD4B008E7771 /* XCRemoteSwiftPackageReference "swift-snapshot-testing" */;
 			productName = SnapshotTesting;
 		};
-		E1CAC6EB25B342DD004B3FCE /* VanillaShopClientLive */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = VanillaShopClientLive;
-		};
 		E1CAC70925B3497D004B3FCE /* VanillaShopFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = VanillaShopFeature;
-		};
-		E1CAC70F25B34E95004B3FCE /* ComposableShopClientLive */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = ComposableShopClientLive;
 		};
 		E1CAC71125B34E95004B3FCE /* ComposableShopFeature */ = {
 			isa = XCSwiftPackageProductDependency;

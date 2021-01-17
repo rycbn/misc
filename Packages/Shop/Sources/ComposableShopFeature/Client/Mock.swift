@@ -6,9 +6,10 @@ import Product
 extension ComposableShopClient {
     public static let mock = Self { _ in
         Just(
-            SummaryResponse(
-                summaries: [.miniDress, .cashmereCardigan]
-            )
+            [
+                .miniDress,
+                .cashmereCardigan
+            ]
         )
         .setFailureType(to: Error.self)
         .eraseToEffect()

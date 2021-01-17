@@ -11,6 +11,7 @@ let package = Package(
             targets: ["Shared"]),
     ],
     dependencies: [
+        //.package(path: "Shop/Sources/Product")
     ],
     targets: [
         .target(
@@ -18,6 +19,12 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "SharedTests",
-            dependencies: ["Shared"]),
+            dependencies: [
+                .target(name: "Shared")
+            ],
+            resources: [
+                .copy("Resources")
+            ]
+        ),
     ]
 )

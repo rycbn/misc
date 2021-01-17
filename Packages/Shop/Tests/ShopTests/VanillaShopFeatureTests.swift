@@ -1,7 +1,7 @@
 import XCTest
-@testable import ShopFeature
+@testable import VanillaShopFeature
 
-final class ShopFeatureTests: XCTestCase {
+final class VanillaShopFeatureTests: XCTestCase {
 
   func testViewModel_Fetch_ReturnCorrectValue() {
     let sut = ShopViewModel(client: .mock)

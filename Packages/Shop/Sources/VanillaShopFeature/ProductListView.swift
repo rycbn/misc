@@ -1,9 +1,7 @@
 import SwiftUI
-import VanillaShopClient
-import ProductDetail
 import Product
 
-public struct VanillaProductListView: View {
+public struct ProductListView: View {
     public let products: [Product]
     
     private let columns = [
@@ -15,17 +13,13 @@ public struct VanillaProductListView: View {
         self.products = products
     }
     
-    @State private var isActive: Bool = false
-    
     public var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(products) { product in
-                    Button(action: { isActive = true }) {
-                        NavigationLink(destination: VanillaProductDetailView(product), isActive: $isActive) {
-                            VanillaProductView(product)
-                                .accessibility(label: Text(product.name))
-                        }
+                    NavigationLink(destination: ProductDetailView(product)) {
+                        ProductView(product)
+                            .accessibility(label: Text(product.name))
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
@@ -37,8 +31,8 @@ public struct VanillaProductListView: View {
     }
 }
 
-struct VanillaProductistView_Previews: PreviewProvider {
+struct ProductistView_Previews: PreviewProvider {
     static var previews: some View {
-        VanillaProductListView([.miniDress, .cashmereCardigan])
+        ProductListView([.miniDress, .cashmereCardigan])
     }
 }

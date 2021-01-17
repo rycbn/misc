@@ -1,15 +1,14 @@
 import Foundation
-import VanillaShopClient
-import Product
+import ComposableArchitecture
 
-extension VanillaShopClient {
+extension ComposableShopClient {
     public static let live = Self { url in
         URLSession
             .shared
             .dataTaskPublisher(for: url)
             .map(\.data)
             .decode(type: SummaryResponse.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .eraseToAnyPublisher()
+            .map(\.summaries)
+            .eraseToEffect()
     }
 }

@@ -1,11 +1,10 @@
 import Foundation
 import Combine
-import VanillaShopClient
 import Product
 
 public final class ShopViewModel: ObservableObject {
     @Published private(set) var products: [Product] = []
-    @Published private(set) var isLoading: Bool = true
+    @Published private(set) var isLoading: Bool = false
     
     let client: VanillaShopClient
     private var cancellable: AnyCancellable?
@@ -14,11 +13,13 @@ public final class ShopViewModel: ObservableObject {
         self.client = client
     }
     
-    private var url: URL {
-        URL(string: "https://api.net-a-porter.com/NAP/GB/en/300/0/summaries")!
+    private var url: URL? {
+        URL(string: "https://api.net-a-porter.com/NAP/GB/en/300/0/summaries")
     }
     
     public func fetch() {
+        guard let url = url else { return }
+        isLoading = true
         cancellable = client
             .summary(url)
             .sink(
@@ -31,8 +32,8 @@ public final class ShopViewModel: ObservableObject {
                         dump(error.localizedDescription)
                     }
                 },
-                receiveValue: { [weak self] (response) in
-                    self?.products = response.summaries
+                receiveValue: { [weak self] (products) in
+                    self?.products = products
                 }
             )
     }
