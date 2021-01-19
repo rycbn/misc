@@ -2,14 +2,14 @@ import SwiftUI
 import Product
 import SharedUI
 
-public struct ProductDetailView: View {
-    public let product: Product
+struct ProductDetailView: View {
+    let product: Product
     
-    public init(_ product: Product) {
+    init(_ product: Product) {
         self.product = product
     }
     
-    public var body: some View {
+    var body: some View {
         VStack(alignment: .leading) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {

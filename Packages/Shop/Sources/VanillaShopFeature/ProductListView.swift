@@ -18,7 +18,7 @@ public struct ProductListView: View {
             LazyVGrid(columns: columns) {
                 ForEach(products) { product in
                     NavigationLink(destination: ProductDetailView(product)) {
-                        ProductView(product)
+                        ProductRowView(product)
                             .accessibility(label: Text(product.name))
                     }
                     .buttonStyle(PlainButtonStyle())

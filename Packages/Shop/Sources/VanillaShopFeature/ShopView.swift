@@ -33,7 +33,7 @@ public struct ShopView: View {
 struct ShopView_Previews: PreviewProvider {
     static var previews: some View {
         ShopView(
-            viewModel: ShopViewModel(client: .live)
+            viewModel: ShopViewModel(client: .mock)
         )
     }
 }

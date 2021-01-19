@@ -2,14 +2,14 @@ import SwiftUI
 import SharedUI
 import Product
 
-public struct ProductView: View {
-    public let product: Product
+struct ProductRowView: View {
+    let product: Product
     
-    public init(_ product: Product) {
+    init(_ product: Product) {
         self.product = product
     }
     
-    public var body: some View {
+    var body: some View {
         VStack(alignment: .leading) {
             ProductImage(product.images.url)
                 .accessibility(label: Text(product.name + "image"))
@@ -32,8 +32,8 @@ public struct ProductView: View {
     }
 }
 
-struct ProductView_Previews: PreviewProvider {
+struct ProductRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductView(.miniDress)
+        ProductRowView(.miniDress)
     }
 }

@@ -7,7 +7,7 @@ public struct Product: Codable, Equatable, Hashable, Identifiable {
     public let images: Images
     public let badges: [String]
     
-    // bpublic var isLoaded: Bool = false
+    public var isLoaded: Bool? = false
     
     public var badge: String {
         badges.first?.replacingOccurrences(of: "_", with: " ") ?? ""

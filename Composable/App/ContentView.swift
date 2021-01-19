@@ -1,7 +1,6 @@
 import SwiftUI
 import ComposableArchitecture
 import ComposableShopFeature
-import ComposableShopClient
 
 struct AppState: Equatable {
   var selectedTab: Tab = .shop
@@ -54,7 +53,7 @@ struct ContentView: View {
   var body: some View {
     WithViewStore(store) { viewStore in
       TabView(selection: $selectedTab) {
-        ComposableShopView(
+        ShopView(
           store: store.scope(
             state: \.shop,
             action: AppAction.shop
