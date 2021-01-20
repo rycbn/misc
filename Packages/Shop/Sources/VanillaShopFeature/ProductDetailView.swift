@@ -1,20 +1,5 @@
 import SwiftUI
-import Product
 import SharedUI
-
-
-@dynamicMemberLookup
-final class ProductDetailViewModel: ObservableObject {
-    @Published var product: Product
-    
-    init(product: Product) {
-        self.product = product
-    }
-
-    subscript<T>(dynamicMember keyPath: KeyPath<Product, T>) -> T {
-        product[keyPath: keyPath]
-    }
-}
 
 struct ProductDetailView: View {
     @ObservedObject var viewModel: ProductDetailViewModel

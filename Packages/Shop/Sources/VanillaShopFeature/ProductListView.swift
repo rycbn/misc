@@ -1,13 +1,4 @@
 import SwiftUI
-import Product
-
-final class ProductListViewModel: ObservableObject {
-    @Published var products: [Product]
-    
-    init(products: [Product]) {
-        self.products = products
-    }
-}
 
 struct ProductListView: View {
     @ObservedObject var viewModel: ProductListViewModel
