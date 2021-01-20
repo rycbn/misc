@@ -15,7 +15,11 @@ public struct ShopView: View {
                     ActivityIndicator()
                         .frame(maxWidth: .infinity)
                 }
-                ProductListView(viewModel.products)
+                ProductListView(
+                    viewModel: ProductListViewModel(
+                        products: viewModel.products
+                    )
+                )
             }
             .navigationTitle(Text("Shop"))
             .navigationBarTitleDisplayMode(.inline)

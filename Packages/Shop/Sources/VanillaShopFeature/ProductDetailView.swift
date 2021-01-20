@@ -2,21 +2,35 @@ import SwiftUI
 import Product
 import SharedUI
 
-struct ProductDetailView: View {
-    let product: Product
+
+@dynamicMemberLookup
+final class ProductDetailViewModel: ObservableObject {
+    @Published var product: Product
     
-    init(_ product: Product) {
+    init(product: Product) {
         self.product = product
+    }
+
+    subscript<T>(dynamicMember keyPath: KeyPath<Product, T>) -> T {
+        product[keyPath: keyPath]
+    }
+}
+
+struct ProductDetailView: View {
+    @ObservedObject var viewModel: ProductDetailViewModel
+    
+    init(viewModel: ProductDetailViewModel) {
+        self.viewModel = viewModel
     }
     
     var body: some View {
         VStack(alignment: .leading) {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
-                    ForEach(product.images.urls, id: \.self) { url in
+                    ForEach(viewModel.images.urls, id: \.self) { url in
                         ProductImage(url)
                             .frame(width: 350)
-                            .accessibility(label: Text(product.name + "image"))
+                            .accessibility(label: Text(viewModel.name + "image"))
                     }
                 }
                 .padding(.leading, 8)
@@ -25,13 +39,13 @@ struct ProductDetailView: View {
             .padding(.bottom, 16)
             
             Group {
-                ProductName(product.name)
+                ProductName(viewModel.name)
                     .padding(.bottom, 2)
                 
-                ProductPrice(product.price.totalAmount)
+                ProductPrice(viewModel.price.totalAmount)
                 
-                if !product.badge.isEmpty {
-                    ProductBadge(product.badge)
+                if !viewModel.badge.isEmpty {
+                    ProductBadge(viewModel.badge)
                 }
             }
             .padding(.leading, 16)
@@ -43,6 +57,6 @@ struct ProductDetailView: View {
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailView(.miniDress)
+        ProductDetailView(viewModel: ProductDetailViewModel(product: .miniDress))
     }
 }

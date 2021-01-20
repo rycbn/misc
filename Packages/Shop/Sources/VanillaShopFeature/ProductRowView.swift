@@ -2,38 +2,61 @@ import SwiftUI
 import SharedUI
 import Product
 
-struct ProductRowView: View {
-    let product: Product
+@dynamicMemberLookup
+final class ProductRowViewModel: ObservableObject {
+    @Published var product: Product
     
-    init(_ product: Product) {
+    init(product: Product) {
         self.product = product
     }
     
+    func favoriteTapped() {
+        product.isFavorite.toggle()
+    }
+    
+    subscript<T>(dynamicMember keyPath: KeyPath<Product, T>) -> T {
+        product[keyPath: keyPath]
+    }
+}
+
+struct ProductRowView: View {
+    @ObservedObject var viewModel: ProductRowViewModel
+    
+    init(viewModel: ProductRowViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            ProductImage(product.images.url)
-                .accessibility(label: Text(product.name + "image"))
-            
-            ProductName(product.name)
-                .padding(.leading, 8)
-            
-            Spacer()
-            
-            Group {
-                ProductPrice(product.price.totalAmount)
+        ZStack(alignment: .topTrailing) {
+            VStack(alignment: .leading) {
+                ProductImage(viewModel.images.url)
+                    .accessibility(label: Text(viewModel.name + "image"))
                 
-                if !product.badge.isEmpty {
-                    ProductBadge(product.badge)
+                ProductName(viewModel.name)
+                    .padding(.leading, 8)
+                
+                Spacer()
+                
+                Group {
+                    ProductPrice(viewModel.price.totalAmount)
+                    
+                    if !viewModel.badge.isEmpty {
+                        ProductBadge(viewModel.badge)
+                    }
                 }
+                .padding(.leading, 8)
             }
-            .padding(.leading, 8)
+            .padding(.bottom, 16)
+            
+            Button(action: { viewModel.favoriteTapped() }) {
+                ProductFavorite(isFavorite: viewModel.isFavorite)
+            }
         }
-        .padding(.bottom, 16)
     }
 }
 
 struct ProductRowView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductRowView(.miniDress)
+        ProductRowView(viewModel: ProductRowViewModel(product: .miniDress))
     }
 }

@@ -76,6 +76,7 @@ struct ContentView: View {
         }
         .tag(AppState.Tab.trakt)
       }
+      .accentColor(.black)
       .onAppear {
         viewStore.send(.onAppear)
       }

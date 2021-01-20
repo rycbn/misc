@@ -1,24 +1,32 @@
 import SwiftUI
 import Product
 
-public struct ProductListView: View {
-    public let products: [Product]
+final class ProductListViewModel: ObservableObject {
+    @Published var products: [Product]
+    
+    init(products: [Product]) {
+        self.products = products
+    }
+}
+
+struct ProductListView: View {
+    @ObservedObject var viewModel: ProductListViewModel
     
     private let columns = [
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
     
-    public init(_ products: [Product]) {
-        self.products = products
+    init(viewModel: ProductListViewModel) {
+        self.viewModel = viewModel
     }
     
-    public var body: some View {
+    var body: some View {
         ScrollView {
             LazyVGrid(columns: columns) {
-                ForEach(products) { product in
-                    NavigationLink(destination: ProductDetailView(product)) {
-                        ProductRowView(product)
+                ForEach(viewModel.products) { product in
+                    NavigationLink(destination: ProductDetailView(viewModel: ProductDetailViewModel(product: product))) {
+                        ProductRowView(viewModel: ProductRowViewModel(product: product))
                             .accessibility(label: Text(product.name))
                     }
                     .buttonStyle(PlainButtonStyle())
@@ -33,6 +41,10 @@ public struct ProductListView: View {
 
 struct ProductistView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductListView([.miniDress, .cashmereCardigan])
+        ProductListView(
+            viewModel: ProductListViewModel(
+                products: [.miniDress, .cashmereCardigan]
+            )
+        )
     }
 }

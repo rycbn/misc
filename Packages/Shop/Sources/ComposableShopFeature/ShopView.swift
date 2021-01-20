@@ -31,6 +31,11 @@ public struct ShopEnvironment {
     }
 }
 
+public enum ProductAction {
+    case favoriteTapped
+    case onAppear
+}
+
 public let shopReducer = Reducer<ShopState, ShopAction, ShopEnvironment>.combine(
     .init { state, action, environment in
         switch action {
@@ -56,8 +61,10 @@ public let shopReducer = Reducer<ShopState, ShopAction, ShopEnvironment>.combine
             state.products = products
         
         case let .product(index, action: .onAppear):
-            state.products[index].isLoaded = true
-            
+            state.products[index].isLoaded.toggle()
+
+        case let .product(index, action: .favoriteTapped):
+            state.products[index].isFavorite.toggle()
         }
         
         return .none

@@ -7,10 +7,28 @@ public struct Product: Codable, Equatable, Hashable, Identifiable {
     public let images: Images
     public let badges: [String]
     
-    public var isLoaded: Bool? = false
+    public var isLoaded: Bool = false
+    public var isFavorite: Bool = false
     
     public var badge: String {
         badges.first?.replacingOccurrences(of: "_", with: " ") ?? ""
+    }
+    
+    public init(id: Int, name: String, price: Price, images: Images, badges: [String]) {
+        self.id = id
+        self.name = name
+        self.price = price
+        self.images = images
+        self.badges = badges
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        name = try container.decode(String.self, forKey: .name)
+        price = try container.decode(Price.self, forKey: .price)
+        images = try container.decode(Images.self, forKey: .images)
+        badges = try container.decode([String].self, forKey: .badges)
     }
     
     public struct Price: Codable, Hashable, Equatable {
@@ -24,12 +42,6 @@ public struct Product: Codable, Equatable, Hashable, Identifiable {
         
         public var totalAmount: String {
             currency + " \(price)"
-        }
-        
-        public init(currency: String, divisor: Int, amount: Int) {
-            self.currency = currency
-            self.divisor = divisor
-            self.amount = amount
         }
     }
     
@@ -57,15 +69,5 @@ public struct Product: Codable, Equatable, Hashable, Identifiable {
                 )
             }
         }
-        
-        public init(shots: [String], sizes: [String], urlTemplate: String) {
-            self.shots = shots
-            self.sizes = sizes
-            self.urlTemplate = urlTemplate
-        }
     }
-}
-
-public enum ProductAction {
-    case onAppear
 }
