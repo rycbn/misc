@@ -1,5 +1,6 @@
 import SwiftUI
 import SharedUI
+import Product
 
 public struct ShopView: View {
     @ObservedObject var viewModel: ShopViewModel
@@ -17,9 +18,10 @@ public struct ShopView: View {
                 }
                 ProductListView(
                     viewModel: ProductListViewModel(
-                        products: viewModel.products
+                        products: viewModel.isLoading ? Product.placeholder : viewModel.products
                     )
                 )
+                .redacted(reason: viewModel.isLoading ? .placeholder : [])
             }
             .navigationTitle(Text("Shop"))
             .navigationBarTitleDisplayMode(.inline)
@@ -29,7 +31,6 @@ public struct ShopView: View {
     
     private func fetch() {
         guard viewModel.products.isEmpty else { return }
-        print("=====> viewModel.fetch")
         viewModel.fetch()
     }
 }

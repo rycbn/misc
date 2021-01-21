@@ -41,4 +41,14 @@ extension Product {
         ),
         badges: ["In_Stock"]
     )
+    
+    public static let placeholder = (0...11).map { number in
+        Self(
+            id: number,
+            name: String(repeating: " ", count: 20),
+            price: Product.Price(currency: "GBP", divisor: 100, amount: 10000),
+            images: Product.Images(shots: ["in"], sizes: ["dl"], urlTemplate: "{{scheme}}//cache.net-a-porter.com/images/products/\(number))/\(number)_{{shot}}_{{size}}.jpg"),
+            badges: ["In_Stock"]
+        )
+    }
 }

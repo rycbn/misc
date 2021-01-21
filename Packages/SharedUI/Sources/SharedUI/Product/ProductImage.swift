@@ -18,7 +18,7 @@ public struct ProductImage: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
+struct ProductImage_Previews: PreviewProvider {
     static let url = URL(string: "https://cache.net-a-porter.com/images/products/1317866/1317866_in_dl.jpg")
     static var previews: some View {
         ProductImage(url)

@@ -4,7 +4,7 @@ import Product
 
 public final class ShopViewModel: ObservableObject {
     @Published private(set) var products: [Product] = []
-    private(set) var isLoading: Bool = false
+    @Published private(set) var isLoading: Bool = false
     
     let client: VanillaShopClient
     private var cancellable: AnyCancellable?

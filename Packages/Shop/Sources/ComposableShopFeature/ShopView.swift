@@ -4,11 +4,15 @@ import Product
 import SharedUI
 
 public struct ShopState: Equatable {
-    public var products: [Product] = []
-    public var isLoading: Bool = false
+    public var products: [Product]
+    public var isLoading: Bool
     public var product: Product?
     
-    public init() {}
+    public init(products: [Product] = [], isLoading: Bool = false, product: Product? = nil) {
+        self.products = products
+        self.isLoading = isLoading
+        self.product = product
+    }
 
     var url: URL? {
         URL(string: "https://api.net-a-porter.com/NAP/GB/en/300/0/summaries")
@@ -40,7 +44,6 @@ public let shopReducer = Reducer<ShopState, ShopAction, ShopEnvironment>.combine
     .init { state, action, environment in
         switch action {
         case .onAppear:
-            print("=====> shopReducer onAppear")
             state.isLoading = true
             struct ShopID: Hashable {}
             guard let url = state.url else { return .none }
@@ -93,7 +96,16 @@ public struct ShopView: View {
                     }
                     ScrollView {
                         LazyVGrid(columns: columns) {
-                            ProductListView(store: store)
+                            ProductListView(
+                                store: viewStore.isLoading
+                                    ? Store(
+                                        initialState: .init(products: Product.placeholder),
+                                        reducer: .empty,
+                                        environment: ()
+                                    )
+                                    : store
+                            )
+                            .redacted(reason: viewStore.isLoading ? .placeholder : [])
                         }
                         .padding(.leading, 8)
                         .padding([.top, .trailing], 16)
