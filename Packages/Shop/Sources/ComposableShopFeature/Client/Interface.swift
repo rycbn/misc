@@ -1,6 +1,6 @@
 import Foundation
 import ComposableArchitecture
-import Product
+import Shared
 
 public struct ComposableShopClient {
     public let summary: (URL) -> Effect<[Product], Error>

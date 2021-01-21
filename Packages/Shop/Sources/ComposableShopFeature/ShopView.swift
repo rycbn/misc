@@ -1,6 +1,6 @@
 import SwiftUI
 import ComposableArchitecture
-import Product
+import Shared
 import SharedUI
 
 public struct ShopState: Equatable {

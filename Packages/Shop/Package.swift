@@ -13,11 +13,7 @@ let package = Package(
         .library(
             name: "ComposableShopFeature",
             targets: ["ComposableShopFeature"]
-        ),
-        .library(
-            name: "Product",
-            targets: ["Product"]
-        ),
+        )
     ],
     dependencies: [
         .package(path: "Shared"),
@@ -31,7 +27,6 @@ let package = Package(
         .target(
             name: "VanillaShopFeature",
             dependencies: [
-                .target(name: "Product"),
                 .product(name: "Shared", package: "Shared"),
                 .product(name: "SharedUI", package: "SharedUI")
             ]
@@ -39,18 +34,12 @@ let package = Package(
         .target(
             name: "ComposableShopFeature",
             dependencies: [
-                .target(name: "Product"),
                 .product(name: "Shared", package: "Shared"),
+                .product(name: "SharedUI", package: "SharedUI"),
                 .product(
                     name: "ComposableArchitecture",
                     package: "swift-composable-architecture"
                 )
-            ]
-        ),
-        .target(
-            name: "Product",
-            dependencies: [
-                .product(name: "SharedUI", package: "SharedUI"),
             ]
         ),
         .testTarget(

@@ -1,6 +1,6 @@
 import Foundation
 import ComposableArchitecture
-import Product
+import Shared
 
 extension ComposableShopClient {
     public static let live = Self { url in

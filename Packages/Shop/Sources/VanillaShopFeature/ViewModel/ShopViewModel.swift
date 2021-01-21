@@ -1,6 +1,6 @@
 import Foundation
 import Combine
-import Product
+import Shared
 
 public final class ShopViewModel: ObservableObject {
     @Published private(set) var products: [Product] = []

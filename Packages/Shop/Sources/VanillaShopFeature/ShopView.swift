@@ -1,6 +1,6 @@
 import SwiftUI
 import SharedUI
-import Product
+import Shared
 
 public struct ShopView: View {
     @ObservedObject var viewModel: ShopViewModel

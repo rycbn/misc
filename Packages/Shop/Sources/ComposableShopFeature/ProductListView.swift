@@ -1,6 +1,6 @@
 import SwiftUI
 import ComposableArchitecture
-import Product
+import Shared
 
 struct ProductListView: View {
     public let store: Store<ShopState, ShopAction>

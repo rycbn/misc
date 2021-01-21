@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 import ComposableArchitecture
-import Product
+import Shared
 
 extension ComposableShopClient {
     public static let mock = Self { _ in

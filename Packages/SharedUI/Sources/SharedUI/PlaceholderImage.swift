@@ -4,9 +4,9 @@ public struct PlaceholderImage: View {
     public init() {}
     
     public var body: some View {
-        Image("placeholder")
+        Image("placeholder", bundle: .module)
             .resizable()
-            .aspectRatio(contentMode: .fill)
+            .aspectRatio(contentMode: .fit)
     }
 }
 

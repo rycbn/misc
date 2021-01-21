@@ -18,8 +18,8 @@ extension Bundle {
         dataDecodingStratery: JSONDecoder.DataDecodingStrategy = .deferredToData,
         keyDecodingStratery: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys
     ) throws -> T {
-        guard let url = self.url(forResource: file, withExtension: nil) else {
-            //assertionFailure("Failed to locate \(file) in bundle.")
+        guard let url = Bundle.module.url(forResource: file, withExtension: nil) else {
+            assertionFailure("Failed to locate \(file) in bundle.")
             throw Error.failedToLocateFile
         }
         guard let data = try? Data(contentsOf: url) else {

@@ -1,11 +1,10 @@
 import SwiftUI
 import ComposableArchitecture
 import SharedUI
-import Product
+import Shared
 
 struct ProductDetailView: View {
     let store: Store<Product, ProductAction>
-    
     var body: some View {
         WithViewStore(store) { viewStore in
             VStack(alignment: .leading) {

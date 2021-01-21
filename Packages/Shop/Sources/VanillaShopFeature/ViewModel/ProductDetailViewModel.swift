@@ -1,5 +1,5 @@
 import Foundation
-import Product
+import Shared
 
 @dynamicMemberLookup
 final class ProductDetailViewModel: ObservableObject {

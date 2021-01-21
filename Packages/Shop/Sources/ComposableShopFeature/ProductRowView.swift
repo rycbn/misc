@@ -1,7 +1,7 @@
 import SwiftUI
 import ComposableArchitecture
 import SharedUI
-import Product
+import Shared
 
 struct ProductRowView: View {
     let store: Store<Product, ProductAction>

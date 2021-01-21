@@ -1,5 +1,5 @@
 import Combine
-import Product
+import Shared
 
 extension VanillaShopClient {
     public static let mock = Self { _ in

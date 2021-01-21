@@ -1,5 +1,5 @@
 import Foundation
-import Product
+import Shared
 
 extension VanillaShopClient {
     public static let live = Self { url in
