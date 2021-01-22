@@ -16,11 +16,15 @@ final class VanillaShopFeatureTests: XCTestCase {
     func testViewModel_favoriteTapped() {
         let sut = ProductRowViewModel(product: .miniDress)
         
-        XCTAssertFalse(sut.product.isFavorite)
+        XCTAssertFalse(sut.isFavorite)
         
         sut.favoriteTapped()
         
-        XCTAssertTrue(sut.product.isFavorite)
+        XCTAssertTrue(sut.isFavorite)
+        
+        sut.favoriteTapped()
+        
+        XCTAssertFalse(sut.isFavorite)
     }
     
     func testViewModel_Subscript_ReturnCorrectValue() {
