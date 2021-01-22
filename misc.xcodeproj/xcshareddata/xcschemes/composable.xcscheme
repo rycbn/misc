@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E141792225ACEC2D00AC2BED"
-               BuildableName = "vanilla.app"
-               BlueprintName = "vanilla"
+               BlueprintIdentifier = "E134538425ADC4A60098A2D2"
+               BuildableName = "composable.app"
+               BlueprintName = "composable"
                ReferencedContainer = "container:misc.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -34,9 +34,9 @@
             testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E14CEFB025ADCC5C008E7771"
-               BuildableName = "vanillaTests.xctest"
-               BlueprintName = "vanillaTests"
+               BlueprintIdentifier = "E14CEFC425ADCC8D008E7771"
+               BuildableName = "composableTests.xctest"
+               BlueprintName = "composableTests"
                ReferencedContainer = "container:misc.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +56,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E141792225ACEC2D00AC2BED"
-            BuildableName = "vanilla.app"
-            BlueprintName = "vanilla"
+            BlueprintIdentifier = "E134538425ADC4A60098A2D2"
+            BuildableName = "composable.app"
+            BlueprintName = "composable"
             ReferencedContainer = "container:misc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -73,9 +73,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E141792225ACEC2D00AC2BED"
-            BuildableName = "vanilla.app"
-            BlueprintName = "vanilla"
+            BlueprintIdentifier = "E134538425ADC4A60098A2D2"
+            BuildableName = "composable.app"
+            BlueprintName = "composable"
             ReferencedContainer = "container:misc.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

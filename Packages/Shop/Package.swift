@@ -46,7 +46,12 @@ let package = Package(
             name: "ShopTests",
             dependencies: [
                 .target(name: "VanillaShopFeature"),
-                .product(name: "Shared", package: "Shared")
+                .target(name: "ComposableShopFeature"),
+                .product(name: "Shared", package: "Shared"),
+                .product(
+                    name: "ComposableArchitecture",
+                    package: "swift-composable-architecture"
+                )
             ]
         ),
     ]

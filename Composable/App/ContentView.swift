@@ -9,7 +9,7 @@ struct AppState: Equatable {
 extension AppState {
   enum Tab {
     case shop
-    case trakt
+    case settings
   }
 }
 
@@ -66,15 +66,14 @@ struct ContentView: View {
         .tag(AppState.Tab.shop)
         
         NavigationView {
-          //TraktView()
-          Text("Trakt")
-            .navigationTitle(Text("Trakt"))
+          Text("Settings")
+            .navigationTitle(Text("Settings"))
         }
         .tabItem {
-          Label("Trakt", systemImage: "tv")
-            .accessibility(label: Text("Trakt"))
+          Label("Settiings", systemImage: "list.bullet")
+            .accessibility(label: Text("Settings"))
         }
-        .tag(AppState.Tab.trakt)
+        .tag(AppState.Tab.settings)
       }
       .accentColor(.black)
       .onAppear {

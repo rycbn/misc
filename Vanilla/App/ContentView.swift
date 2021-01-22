@@ -20,12 +20,12 @@ struct ContentView: View {
         .tag(Tab.shop)
       
       NavigationView {
-        TraktView()
-          .navigationTitle(Text("Trakt"))
+        SettingsView()
+          .navigationTitle(Text("Settings"))
       }
       .tabItem {
-        Label("Trakt", systemImage: "tv")
-          .accessibility(label: Text("Trakt"))
+        Label("Settings", systemImage: "list.bullet")
+          .accessibility(label: Text("Settings"))
       }
       .tag(Tab.trakt)
     }

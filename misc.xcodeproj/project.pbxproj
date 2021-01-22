@@ -18,7 +18,7 @@
 		E14CEFC825ADCC8D008E7771 /* ComposableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E14CEFC725ADCC8D008E7771 /* ComposableTests.swift */; };
 		E14CEFE425ADCD4B008E7771 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEFE325ADCD4B008E7771 /* SnapshotTesting */; };
 		E14CEFEA25ADCD61008E7771 /* SnapshotTesting in Frameworks */ = {isa = PBXBuildFile; productRef = E14CEFE925ADCD61008E7771 /* SnapshotTesting */; };
-		E1C3A5CE25AD0D6F0044F471 /* TraktView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A5CD25AD0D6F0044F471 /* TraktView.swift */; };
+		E1C3A5CE25AD0D6F0044F471 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1C3A5CD25AD0D6F0044F471 /* SettingsView.swift */; };
 		E1CAC70A25B3497D004B3FCE /* VanillaShopFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC70925B3497D004B3FCE /* VanillaShopFeature */; };
 		E1CAC71225B34E95004B3FCE /* ComposableShopFeature in Frameworks */ = {isa = PBXBuildFile; productRef = E1CAC71125B34E95004B3FCE /* ComposableShopFeature */; };
 /* End PBXBuildFile section */
@@ -61,7 +61,7 @@
 		E14CEFC925ADCC8D008E7771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1634C7725B0D32600A735A4 /* Shared */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shared; sourceTree = "<group>"; };
 		E1C04F3225B1788C00599E14 /* SharedUI */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SharedUI; sourceTree = "<group>"; };
-		E1C3A5CD25AD0D6F0044F471 /* TraktView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TraktView.swift; sourceTree = "<group>"; };
+		E1C3A5CD25AD0D6F0044F471 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -228,17 +228,17 @@
 			children = (
 				E14CEF7025ADC531008E7771 /* VanillaApp.swift */,
 				E14CEF7125ADC531008E7771 /* ContentView.swift */,
-				E1C3A5D025AD0D870044F471 /* Trakt */,
+				E1C3A5D025AD0D870044F471 /* Settings */,
 			);
 			path = App;
 			sourceTree = "<group>";
 		};
-		E1C3A5D025AD0D870044F471 /* Trakt */ = {
+		E1C3A5D025AD0D870044F471 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				E1C3A5CD25AD0D6F0044F471 /* TraktView.swift */,
+				E1C3A5CD25AD0D6F0044F471 /* SettingsView.swift */,
 			);
-			path = Trakt;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		E1CAC6BE25B2093A004B3FCE /* Frameworks */ = {
@@ -449,7 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E14CEF7325ADC531008E7771 /* ContentView.swift in Sources */,
-				E1C3A5CE25AD0D6F0044F471 /* TraktView.swift in Sources */,
+				E1C3A5CE25AD0D6F0044F471 /* SettingsView.swift in Sources */,
 				E14CEF7225ADC531008E7771 /* VanillaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

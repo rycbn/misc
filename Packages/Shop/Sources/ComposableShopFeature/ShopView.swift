@@ -19,9 +19,9 @@ public struct ShopState: Equatable {
     }
 }
 
-public enum ShopAction {
+public enum ShopAction: Equatable {
     case onAppear
-    case response(Result<[Product], Error>)
+    case response(Result<[Product], ComposableShopClient.Failure>)
     case product(index: Int, action: ProductAction)
 }
 
@@ -64,7 +64,7 @@ public let shopReducer = Reducer<ShopState, ShopAction, ShopEnvironment>.combine
             state.products = products
         
         case let .product(index, action: .onAppear):
-            state.products[index].isLoaded.toggle()
+            break
 
         case let .product(index, action: .favoriteTapped):
             state.products[index].isFavorite.toggle()

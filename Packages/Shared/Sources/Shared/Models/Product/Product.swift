@@ -7,7 +7,6 @@ public struct Product: Codable, Equatable, Hashable, Identifiable {
     public let images: Images
     public let badges: [String]
     
-    public var isLoaded: Bool = false
     public var isFavorite: Bool = false
     
     public var badge: String {
