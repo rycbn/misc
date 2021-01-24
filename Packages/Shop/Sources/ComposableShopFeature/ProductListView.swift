@@ -9,13 +9,20 @@ struct ProductListView: View {
         self.store = store
     }
 
+    private let columns = [GridItem(.adaptive(minimum: 150), spacing: 16, alignment: .center)]
+
     var body: some View {
         WithViewStore(store) { viewStore in
-            ForEachStore(store.scope(state: \.products, action: ShopAction.product)) { productStore in
-                NavigationLink(destination: ProductDetailView(store: productStore)) {
-                    ProductRowView(store: productStore)
+            ScrollView {
+                LazyVGrid(columns: columns, spacing: 16) {
+                    ForEachStore(store.scope(state: \.products, action: ShopAction.product)) { productStore in
+                        NavigationLink(destination: ProductDetailView(store: productStore)) {
+                            ProductRowView(store: productStore)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
                 }
-                .buttonStyle(PlainButtonStyle())
+                .padding(16)
             }
         }
     }

@@ -9,33 +9,31 @@ struct ProductDetailView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading) {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack {
-                    ForEach(viewModel.images.urls, id: \.self) { url in
-                        ProductImage(url)
-                            .frame(width: 350)
-                            .accessibility(label: Text(viewModel.name + "image"))
+        GeometryReader { geomery in
+            VStack(alignment: .leading) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(alignment: .center, spacing: 16){
+                        ForEach(viewModel.images.urls, id: \.self) { url in
+                            ProductImage(url)
+                                .frame(width: geomery.size.width - 100)
+                                .accessibility(label: Text(viewModel.name + "image"))
+                        }
+                    }
+                    .padding(16)
+                }
+                Group {
+                    ProductName(viewModel.name)
+                        .padding(.bottom, 2)
+                    
+                    ProductPrice(viewModel.price.totalAmount)
+                    
+                    if !viewModel.badge.isEmpty {
+                        ProductBadge(viewModel.badge)
                     }
                 }
-                .padding(.leading, 8)
-                .padding([.top, .trailing], 16)
+                .padding(.leading, 16)
+                Spacer()
             }
-            .padding(.bottom, 16)
-            
-            Group {
-                ProductName(viewModel.name)
-                    .padding(.bottom, 2)
-                
-                ProductPrice(viewModel.price.totalAmount)
-                
-                if !viewModel.badge.isEmpty {
-                    ProductBadge(viewModel.badge)
-                }
-            }
-            .padding(.leading, 16)
-            
-            Spacer()
         }
     }
 }

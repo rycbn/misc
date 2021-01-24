@@ -18,7 +18,9 @@ public struct ShopView: View {
                 }
                 ProductListView(
                     viewModel: ProductListViewModel(
-                        products: viewModel.isLoading ? Product.placeholder : viewModel.products
+                        products: viewModel.isLoading
+                            ? Product.placeholder
+                            : viewModel.products
                     )
                 )
                 .redacted(reason: viewModel.isLoading ? .placeholder : [])

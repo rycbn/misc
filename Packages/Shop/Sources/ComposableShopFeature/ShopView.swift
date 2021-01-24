@@ -81,11 +81,6 @@ public struct ShopView: View {
         self.store = store
     }
     
-    private let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
-
     public var body: some View {
         WithViewStore(store) { viewStore in
             NavigationView {
@@ -94,22 +89,16 @@ public struct ShopView: View {
                         ActivityIndicator()
                             .frame(maxWidth: .infinity)
                     }
-                    ScrollView {
-                        LazyVGrid(columns: columns) {
-                            ProductListView(
-                                store: viewStore.isLoading
-                                    ? Store(
-                                        initialState: .init(products: Product.placeholder),
-                                        reducer: .empty,
-                                        environment: ()
-                                    )
-                                    : store
+                    ProductListView(
+                        store: viewStore.isLoading
+                            ? Store(
+                                initialState: .init(products: Product.placeholder),
+                                reducer: .empty,
+                                environment: ()
                             )
-                            .redacted(reason: viewStore.isLoading ? .placeholder : [])
-                        }
-                        .padding(.leading, 8)
-                        .padding([.top, .trailing], 16)
-                    }
+                            : store
+                    )
+                    .redacted(reason: viewStore.isLoading ? .placeholder : [])
                 }
                 .navigationTitle(Text("Shop"))
                 .navigationBarTitleDisplayMode(.inline)

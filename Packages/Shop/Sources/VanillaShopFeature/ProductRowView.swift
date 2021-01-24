@@ -13,26 +13,17 @@ struct ProductRowView: View {
             VStack(alignment: .leading) {
                 ProductImage(viewModel.images.url)
                     .accessibility(label: Text(viewModel.name + "image"))
-                
                 ProductName(viewModel.name)
-                    .padding(.leading, 8)
-                
                 Spacer()
-                
-                Group {
-                    ProductPrice(viewModel.price.totalAmount)
-                    
-                    if !viewModel.badge.isEmpty {
-                        ProductBadge(viewModel.badge)
-                    }
+                ProductPrice(viewModel.price.totalAmount)
+                if !viewModel.badge.isEmpty {
+                    ProductBadge(viewModel.badge)
                 }
-                .padding(.leading, 8)
             }
-            .padding(.bottom, 16)
-            
-            Button(action: { viewModel.favoriteTapped() }) {
-                ProductFavorite(isFavorite: viewModel.isFavorite)
-            }
+            ProductFavoriteButton(
+                isFavorite: viewModel.isFavorite,
+                action: viewModel.favoriteTapped
+            )
         }
     }
 }

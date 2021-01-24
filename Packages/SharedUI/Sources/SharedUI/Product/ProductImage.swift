@@ -3,6 +3,8 @@ import Kingfisher
 
 public struct ProductImage: View {
     private let url: URL?
+    private let aspectRatio: CGFloat = 0.67
+    private let shape = RoundedRectangle(cornerRadius: 16, style: .continuous)
     
     public init(_ url: URL?) {
         self.url = url
@@ -10,11 +12,11 @@ public struct ProductImage: View {
     
     public var body: some View {
         KFImage(url)
-            .placeholder { PlaceholderImage() }
+            .placeholder { PlaceholderImage(aspectRatio: aspectRatio) }
             .resizable()
-            .aspectRatio(contentMode: .fit)
-            .cornerRadius(8)
-            .padding(.leading, 8)
+            .aspectRatio(aspectRatio, contentMode: .fit)
+            .clipShape(shape)
+            .contentShape(shape)
     }
 }
 

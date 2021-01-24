@@ -3,10 +3,7 @@ import SwiftUI
 struct ProductListView: View {
     @ObservedObject var viewModel: ProductListViewModel
     
-    private let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
+    private let columns = [GridItem(.adaptive(minimum: 150), spacing: 16, alignment: .center)]
     
     init(viewModel: ProductListViewModel) {
         self.viewModel = viewModel
@@ -14,18 +11,19 @@ struct ProductListView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns) {
+            LazyVGrid(columns: columns, alignment: .center, spacing: 16) {
                 ForEach(viewModel.products) { product in
                     NavigationLink(destination: ProductDetailView(viewModel: ProductDetailViewModel(product: product))) {
-                        ProductRowView(viewModel: ProductRowViewModel(product: product))
-                            .accessibility(label: Text(product.name))
+                        ProductRowView(
+                            viewModel: ProductRowViewModel(product: product)
+                        )
+                        .accessibility(label: Text(product.name))
                     }
                     .buttonStyle(PlainButtonStyle())
                 }
             }
+            .padding(16)
             .buttonStyle(PlainButtonStyle())
-            .padding(.leading, 8)
-            .padding([.top, .trailing], 16)
         }
     }
 }
