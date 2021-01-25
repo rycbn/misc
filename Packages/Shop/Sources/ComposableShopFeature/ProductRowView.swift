@@ -9,18 +9,22 @@ struct ProductRowView: View {
     var body: some View {
         WithViewStore(store) { viewStore in
             ZStack(alignment: .topTrailing) {
-                VStack(alignment: .leading) {
-                    ProductImage(viewStore.images.url)
-                        .accessibility(label: Text(viewStore.name + "image"))
-                    ProductName(viewStore.name)
-                    Spacer()
-                    Group {
-                        ProductPrice(viewStore.price.totalAmount)
-                        if !viewStore.badge.isEmpty {
-                            ProductBadge(viewStore.badge)
+                NavigationLink(destination: ProductDetailView(store: store)) {
+                    VStack(alignment: .leading) {
+                        ProductImage(viewStore.images.url)
+                        ProductName(viewStore.name)
+                        Spacer()
+                        Group {
+                            ProductPrice(viewStore.price.totalAmount)
+                            if !viewStore.badge.isEmpty {
+                                ProductBadge(viewStore.badge)
+                            }
                         }
                     }
+                    .padding(.bottom)
                 }
+                .buttonStyle(PlainButtonStyle())
+                
                 ProductFavoriteButton(isFavorite: viewStore.isFavorite) {
                     viewStore.send(.favoriteTapped)
                 }

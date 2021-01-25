@@ -14,7 +14,6 @@ struct ProductDetailView: View {
                             ForEach(viewStore.images.urls, id: \.self) { url in
                                 ProductImage(url)
                                     .frame(width: geometry.size.width - 100)
-                                    .accessibility(label: Text(viewStore.name + "image"))
                             }
                         }
                         .padding(16)

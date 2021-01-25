@@ -16,7 +16,6 @@ struct ProductDetailView: View {
                         ForEach(viewModel.images.urls, id: \.self) { url in
                             ProductImage(url)
                                 .frame(width: geomery.size.width - 100)
-                                .accessibility(label: Text(viewModel.name + "image"))
                         }
                     }
                     .padding(16)

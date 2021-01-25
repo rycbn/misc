@@ -10,16 +10,20 @@ struct ProductRowView: View {
     
     var body: some View {
         ZStack(alignment: .topTrailing) {
-            VStack(alignment: .leading) {
-                ProductImage(viewModel.images.url)
-                    .accessibility(label: Text(viewModel.name + "image"))
-                ProductName(viewModel.name)
-                Spacer()
-                ProductPrice(viewModel.price.totalAmount)
-                if !viewModel.badge.isEmpty {
-                    ProductBadge(viewModel.badge)
+            NavigationLink(destination: ProductDetailView(viewModel: ProductDetailViewModel(product: viewModel.product))) {
+                VStack(alignment: .leading) {
+                    ProductImage(viewModel.images.url)
+                    ProductName(viewModel.name)
+                    Spacer()
+                    ProductPrice(viewModel.price.totalAmount)
+                    if !viewModel.badge.isEmpty {
+                        ProductBadge(viewModel.badge)
+                    }
                 }
+                .padding(.bottom)
             }
+            .buttonStyle(PlainButtonStyle())
+
             ProductFavoriteButton(
                 isFavorite: viewModel.isFavorite,
                 action: viewModel.favoriteTapped

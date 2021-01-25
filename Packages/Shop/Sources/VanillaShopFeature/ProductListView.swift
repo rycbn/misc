@@ -13,17 +13,13 @@ struct ProductListView: View {
         ScrollView {
             LazyVGrid(columns: columns, alignment: .center, spacing: 16) {
                 ForEach(viewModel.products) { product in
-                    NavigationLink(destination: ProductDetailView(viewModel: ProductDetailViewModel(product: product))) {
-                        ProductRowView(
-                            viewModel: ProductRowViewModel(product: product)
-                        )
-                        .accessibility(label: Text(product.name))
-                    }
-                    .buttonStyle(PlainButtonStyle())
+                    ProductRowView(
+                        viewModel: ProductRowViewModel(product: product)
+                    )
+                    .accessibility(label: Text(product.name))
                 }
             }
             .padding(16)
-            .buttonStyle(PlainButtonStyle())
         }
     }
 }

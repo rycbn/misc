@@ -16,10 +16,7 @@ struct ProductListView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 16) {
                     ForEachStore(store.scope(state: \.products, action: ShopAction.product)) { productStore in
-                        NavigationLink(destination: ProductDetailView(store: productStore)) {
-                            ProductRowView(store: productStore)
-                        }
-                        .buttonStyle(PlainButtonStyle())
+                        ProductRowView(store: productStore)
                     }
                 }
                 .padding(16)
