@@ -11,7 +11,7 @@ let package = Package(
             targets: ["SharedUI"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/onevcat/Kingfisher", from: "6.0.1"),
+        .package(url: "https://github.com/onevcat/Kingfisher", from: "6.1.0"),
     ],
     targets: [
         .target(
